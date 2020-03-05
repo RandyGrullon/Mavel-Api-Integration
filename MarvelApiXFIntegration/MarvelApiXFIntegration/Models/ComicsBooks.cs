@@ -25,7 +25,7 @@ namespace MarvelApiXFIntegration.Models
         [JsonProperty("extension")]
         public string Extension { get; set; }
 
-        public string ImageComic { get =>$"{Path}.{Extension}";}
+        public string ImageComic { get =>$"{Path.Replace("http", "https")}.{Extension}";}
     }
 
     public class Image
@@ -66,12 +66,12 @@ namespace MarvelApiXFIntegration.Models
         public IList<PriceComic> Prices { get; set; }
 
         [JsonProperty("thumbnail")]
-        public Thumbnail Thumbnails { get; set; }
+        public Thumbnail Thumbnail { get; set; }
 
         [JsonProperty("images")]
         public IList<Image> Images { get; set; }
 
-        public string ImageComic { get => $"{Thumbnails.Path}.{Thumbnails.Extension}"; }
+        public string ImageComic { get => $"{Thumbnail.Path.Replace("http", "https")}.{Thumbnail.Extension}"; }
     }
 
     public class Data

@@ -139,15 +139,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\logoM.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\ComicPrueba.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Fondo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Fondo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Logo.png" />
   </ItemGroup>
 </Project>

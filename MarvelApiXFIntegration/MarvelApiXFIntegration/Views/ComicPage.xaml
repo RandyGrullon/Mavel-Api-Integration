@@ -10,7 +10,16 @@
     <ContentPage.Content>
         <ScrollView >
             <StackLayout>
-                <Image  Source="LogoM" HeightRequest="100" />
+                <Image  Source="Logo" 
+                        HeightRequest="200" />
+                
+                <Label Text="Comics" 
+                       FontSize="50"
+                       HorizontalOptions="Center" 
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       />
+                
                 <CollectionView ItemsSource="{Binding Comics}"
 >
                 <CollectionView.ItemsLayout>
@@ -23,15 +32,15 @@
                             <StackLayout Padding="10">
                                 <Image>
                                     <Image.Source>
-                                        <UriImageSource Uri="{Binding Thumbnail.ImageComic}" 
-                                                        CachingEnabled="True" 
-                                                        CacheValidity="30"/>
+                                        <UriImageSource Uri="{Binding ImageComic}"/>
                                     </Image.Source>
                                 </Image>
                                 <Label Text="{Binding Title}" 
                                        TextColor="White" 
                                        FontSize="15" 
-                                       FontAttributes="Bold" />
+                                       FontAttributes="Bold" 
+                                       HorizontalTextAlignment="Center"
+                                       />
                             </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
