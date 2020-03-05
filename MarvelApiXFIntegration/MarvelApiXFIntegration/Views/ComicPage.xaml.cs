@@ -15,7 +15,7 @@ namespace MarvelApiXFIntegration.Views
         public ComicPage()
         {
             InitializeComponent();
-            BindingContext = new ComicPageViewModels();
+            BindingContext = new ComicPageViewModel();
         }
     }
 }

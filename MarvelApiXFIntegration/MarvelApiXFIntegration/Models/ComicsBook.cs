@@ -82,7 +82,7 @@ namespace MarvelApiXFIntegration.Models
     }
 
 
-    public class ComicsBooks
+    public class ComicsBook
     {
 
         [JsonProperty("code")]

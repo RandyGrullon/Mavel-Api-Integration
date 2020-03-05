@@ -11,16 +11,16 @@ using Xamarin.Essentials;
 
 namespace MarvelApiXFIntegration.ViewModels
 {
-     public class ComicPageViewModels : INotifyPropertyChanged
+     public class ComicPageViewModel : INotifyPropertyChanged
     {
         
-        private IApiService apiService = new ApiService();
+       IApiService apiService = new ApiService();
 
-        
 
+        const string Ae = "API EXCEPTION";
         public ObservableCollection<Comic> Comics { get; set; }
 
-        public ComicPageViewModels()
+        public ComicPageViewModel()
         {
             LoadComicList();
         }
@@ -31,15 +31,20 @@ namespace MarvelApiXFIntegration.ViewModels
             {
                 try
                 {
-                    var a = await apiService.GetComic();
-                    Comics = new ObservableCollection<Comic>(a.Data.Results);
+                    var getresult = await apiService.GetComic();
+                    Comics = new ObservableCollection<Comic>(getresult.Data.Results);
                 }
                 catch (Exception ex)
                 {
-
-                    Debug.WriteLine($"API EXCEPTION {ex}");
+                     
+                    Debug.WriteLine($"{Ae} {ex}");
+                    
                 }
-                
+
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Ups", "Internet Conection Needed", "ok");
             }
             
         }

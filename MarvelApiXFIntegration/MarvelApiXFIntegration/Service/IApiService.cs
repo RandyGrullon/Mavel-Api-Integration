@@ -9,6 +9,6 @@ namespace MarvelApiXFIntegration.Service
 {
     public interface IApiService
     {
-        Task<ComicsBooks> GetComic();
+        Task<ComicsBook> GetComic();
     }
 }
